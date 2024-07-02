@@ -1,0 +1,83 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    width: 100%;
+    background-color: purple;
+    height: 50px;
+}
+
+header h1 {
+    color: white;
+    text-align: end;
+    margin-right: 100px;
+}
+
+/* Search section styling */
+
+aside {
+    height: 100vh;
+    width: auto;
+    float: left;
+    margin-right: 20px;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+aside input {
+    height: 40px;
+}
+
+aside input,
+aside button,
+aside ul {
+    margin-bottom: 10px;
+    border-radius: 3px;
+}
+
+aside input,
+aside button,
+aside ul:hover {
+    cursor: pointer;
+}
+
+section {
+    margin-top: 10px;
+    max-width: 90%;
+}
+
+/* Main Styling */
+
+.card {
+    flex-grow: 1;
+    flex-shrink: 1;
+    border: 2px solid black;
+    border-radius: 0;
+    padding: 10px;
+    margin: 10px;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+#currentWeatherCard {
+    height: 250px;
+    margin-left: 223px;
+}
+
+.card-group {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#futureCard {
+    height: 250px;
+}

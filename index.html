@@ -4,8 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lovely's Weather Forecast</title>
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+    <link rel="stylesheet" href="./assets/style.css">
 </head>
 <body>
-    
+    <header>
+        <h1>Weather Dashboard</h1>
+    </header>
+    <aside>
+        <h2>Search for a City:</h2>
+        <input type="text">
+        <button>Search</button>
+        <ul id="cityList"></ul>
+    </aside>
+    <main>
+        <!-- Current weather section -->
+         <section>
+            <div class="card" id="currentWeatherCard">
+                <div class="card-body">
+                  <p id="cityName"></p>
+                  <p id="currentDate"></p>
+                  <p id="temp">Temp: </p>
+                  <p id="wind">Wind: </p>
+                  <p id="humidity">Humidity: </p>
+                </div>
+              </div>
+         </section>
+         <section>
+            <h2>5-Day Forecast:</h2>
+            <div class="card-group">
+                <!-- Card one -->
+                <div class="card">
+                    <div class="card-body" id="futureCard">
+                    <!-- Content goes here -->
+                    <p id="futureDate"></p>
+                    <p id="futureTemp">Temp: </p>
+                    <p id="futureWind">Wind: </p>
+                    <p id="futureHumidity">Humidity: </p>
+                    </div>
+                </div>
+
+                <!-- Card two -->
+                <div class="card">
+                    <div class="card-body" id="futureCard">
+                    <!-- Content goes here -->
+                    <p id="futureDate1"></p>
+                    <p id="futureTemp1">Temp: </p>
+                    <p id="futureWind1">Wind: </p>
+                    <p id="futureHumidity1">Humidity: </p>
+                    </div>
+                </div>
+
+                <!-- Card three -->
+                <div class="card">
+                    <div class="card-body" id="futureCard">
+                    <!-- Content goes here -->
+                    <p id="futureDate2"></p>
+                    <p id="futureTemp2">Temp: </p>
+                    <p id="futureWind2">Wind: </p>
+                    <p id="futureHumidity2">Humidity: </p>
+                    </div>
+                </div>
+
+                <!-- Card four -->
+                <div class="card">
+                    <div class="card-body" id="futureCard">
+                    <!-- Content goes here -->
+                    <p id="futureDate3"></p>
+                    <p id="futureTemp3">Temp: </p>
+                    <p id="futureWind3">Wind: </p>
+                    <p id="futureHumidity3">Humidity: </p>
+                    </div>
+                </div>
+
+                <!-- Card five -->
+                <div class="card">
+                    <div class="card-body" id="futureCard"> 
+                    <!-- Content goes here -->
+                    <p id="futureDate4"></p>
+                    <p id="futureTemp4">Temp: </p>
+                    <p id="futureWind4">Wind: </p>
+                    <p id="futureHumidity4">Humidity: </p>
+                    </div>
+                </div>
+                
+            </div>
+         </section>
+    </main>
 </body>
 </html>
