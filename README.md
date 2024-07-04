@@ -2,12 +2,12 @@
 
 ## Description
 
-
+In this project, I've put all the skills I've learned so far together (HTML, CSS, JS). Using an API and pulling nested values from an array was a lot of fun and it helped me become a little more comfortable with arrays and fetch calls. It was a little challenging re-creating the design provided and making it responsive. I used a lot of console logs to make sure I was pulling the correct data - I started console logging everything because I spent an hour creating my funvtion - I didn't know why it wasn't working until I checked the console and saw that the values I passed was undefined LOL. Local storage doesn't like me right now, so I avoided saving/pulling from local storage in this project. The design isn't anything eye catching but it works XD
 
 ## Installation
 
 Here is the deployed link:
-
+https://love4tau.github.io/serverSideWeatherAPI/
 
 ## Usage
 
@@ -28,3 +28,10 @@ https://stackoverflow.com/questions/33193028/how-to-center-the-cursor-in-a-text-
 
 https://stackoverflow.com/questions/27079598/error-failed-to-execute-appendchild-on-node-parameter-1-is-not-of-type-no
 
+https://web.dev/articles/fixing-mixed-content?hl=en - this error gave me a huge headache. I switched my urls in my js file from http to https but it would not reflect the new changes in the deployed website. I had to open an incognito window - saw that it worked in there. I ended up clearing the cache and cookies and my website worked!
+
+https://github.com/orgs/community/discussions/19713
+
+https://coding-boot-camp.github.io/full-stack/apis/how-to-use-api-keys - this was very very helpful
+
+https://openweathermap.org/forecast5 - API

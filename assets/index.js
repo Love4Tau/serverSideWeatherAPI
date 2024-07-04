@@ -120,14 +120,16 @@ function pushWeather(data) {
     var city = data.city.name;
     cityElem.textContent = city;
 
-    for( i=0; i<6; i++) {
+    for( let i=0; i<6; i++) {
         date[i] = new Date(data.list[index[i]].dt * 1000);
+        console.log(date)
+        console.log(index)
         temp[i] = data.list[index[i]].main.temp;
         wind[i] = data.list[index[i]].wind.speed;
         humid[i] = data.list[index[i]].main.humidity;
     }
 
-    for( a=0; a<6; a++) {
+    for( let a=0; a<6; a++) {
         dateElem[a].textContent = date[a].toLocaleDateString();
         imageElem[a].setAttribute("src", `https://api.openweathermap.org/img/w/${data.list[a].weather[0].icon}.png`)
         tempElem[a].textContent = "Temp: " + temp[a] + " ºC";
