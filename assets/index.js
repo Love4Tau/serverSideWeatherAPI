@@ -15,7 +15,7 @@ var cityList = document.getElementById("city-list");
  // Create function to get coordinates for city
 
  function getCoordinates(city) {
-    var queryUrl = `http://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
+    var queryUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}`;
 
     fetch(queryUrl)
     .then(response =>{
@@ -37,7 +37,7 @@ var cityList = document.getElementById("city-list");
  //Create function to get weather based on long and lat
 
  function getWeather(latitude, longitude) {
-    var forecastUrl = `http://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&lang=english&units=metric&appid=${apiKey}`;
+    var forecastUrl = `https://api.openweathermap.org/data/2.5/forecast?lat=${latitude}&lon=${longitude}&lang=english&units=metric&appid=${apiKey}`;
  
     fetch(forecastUrl)
         .then(response => {
@@ -129,7 +129,7 @@ function pushWeather(data) {
 
     for( a=0; a<6; a++) {
         dateElem[a].textContent = date[a].toLocaleDateString();
-        imageElem[a].setAttribute("src", `http://api.openweathermap.org/img/w/${data.list[a].weather[0].icon}.png`)
+        imageElem[a].setAttribute("src", `https://api.openweathermap.org/img/w/${data.list[a].weather[0].icon}.png`)
         tempElem[a].textContent = "Temp: " + temp[a] + " ºC";
         windElem[a].textContent = "Wind: " + wind[a] + " MPH";
         humidElem[a].textContent = "Humidity: " + humid[a] + " %";
