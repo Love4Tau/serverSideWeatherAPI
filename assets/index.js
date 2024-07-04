@@ -61,15 +61,47 @@ var index = [0, 6, 14, 22, 30, 38];
 
 //Define temp, wind and humid
 
+var date = [6];
 var temp = [6];
 var wind = [6];
 var humid = [6];
 
 // Reference HTML elems to append data from API
+//Created array for all wind, humidity, etc elements to loop through
 
-var tempElem = document.getElementById("temp");
-var windElem = document.getElementById("wind");
-var humidElem = document.getElementById("humidity");
+var dateElem = [
+    document.getElementById("currentDate"),
+    document.getElementById("futureDate"),
+    document.getElementById("futureDate1"),
+    document.getElementById("futureDate2"),
+    document.getElementById("futureDate3"),
+    document.getElementById("futureDate4")
+]
+
+var tempElem = [
+    document.getElementById("temp"),
+    document.getElementById("futureTemp"),
+    document.getElementById("futureTemp1"),
+    document.getElementById("futureTemp2"),
+    document.getElementById("futureTemp3"),
+    document.getElementById("futureTemp4")
+]
+var windElem = [
+        document.getElementById("wind"),
+        document.getElementById("futureWind"),
+        document.getElementById("futureWind1"),
+        document.getElementById("futureWind2"),
+        document.getElementById("futureWind3"),
+        document.getElementById("futureWind4")
+]
+var humidElem = [
+    document.getElementById("humidity"),
+    document.getElementById("futureHumidity"),
+    document.getElementById("futureHumidity1"),
+    document.getElementById("futureHumidity2"),
+    document.getElementById("futureHumidity3"),
+    document.getElementById("futureHumidity4")
+]
 var cityElem = document.getElementById("city-name");
 
 function pushWeather(data) {
@@ -78,15 +110,17 @@ function pushWeather(data) {
     cityElem.textContent = city;
 
     for( i=0; i<6; i++) {
+        date[i] = new Date(data.list[index[i]].dt * 1000);
         temp[i] = data.list[index[i]].main.temp;
         wind[i] = data.list[index[i]].wind.speed;
         humid[i] = data.list[index[i]].main.humidity;
     }
 
     for( a=0; a<6; a++) {
-        tempElem.textContent = "Temp: " + temp[a] + " ºF";
-        windElem.textContent = "Wind: " + wind[a] + " MPH";
-        humidElem.textContent = "Humidity: " + humid[a] + " %";
+        dateElem[a].textContent = date[a].toLocaleDateString();
+        tempElem[a].textContent = "Temp: " + temp[a] + " ºF";
+        windElem[a].textContent = "Wind: " + wind[a] + " MPH";
+        humidElem[a].textContent = "Humidity: " + humid[a] + " %";
     }
 }
 
