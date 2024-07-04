@@ -130,17 +130,44 @@ function pushWeather(data) {
     for( a=0; a<6; a++) {
         dateElem[a].textContent = date[a].toLocaleDateString();
         imageElem[a].setAttribute("src", `http://api.openweathermap.org/img/w/${data.list[a].weather[0].icon}.png`)
-        tempElem[a].textContent = "Temp: " + temp[a] + " ºF";
+        tempElem[a].textContent = "Temp: " + temp[a] + " ºC";
         windElem[a].textContent = "Wind: " + wind[a] + " MPH";
         humidElem[a].textContent = "Humidity: " + humid[a] + " %";
     }
 }
 
+//function to display descriptionas alt for image
+
+// function getDescription() {
+//     for( i=0; i<6; i++) {
+//         image[i] = data.list[index[i]].weather.description;
+//         console.log(image[i])
+//     }
+
+//     for( l=0; l<6; l++) {
+//         imageElem[l].setAttribute("alt", image[i])
+//     }
+// }
+
  //Create event listener for search button
 
+var cityHistory = [];
+
  searchBtn.addEventListener("click", function(){
-    var userInput = userSearch.value;
+    
+    var userInput = userSearch.value.trim();
+
+    if(userInput !== "") {
+        const li = document.createElement("li");
+        const button = document.createElement("button");
+        button.textContent = userInput;
+        button.onclick = () => getCoordinates(userInput);
+        li.appendChild(button);
+        cityList.appendChild(li);
+
+        userSearch.value = "";
+    }
+
     getCoordinates(userInput);
-    // getWeather();
-    console.log("Event listener works mfer")
+
  })
