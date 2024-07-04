@@ -62,6 +62,7 @@ var index = [0, 6, 14, 22, 30, 38];
 //Define temp, wind and humid
 
 var date = [6];
+var image = [6];
 var temp = [6];
 var wind = [6];
 var humid = [6];
@@ -76,6 +77,16 @@ var dateElem = [
     document.getElementById("futureDate2"),
     document.getElementById("futureDate3"),
     document.getElementById("futureDate4")
+]
+
+var imageElem = [
+    document.getElementById("currentWeather"),
+    document.getElementById("futureWeather"),
+    document.getElementById("futureWeather1"),
+    document.getElementById("futureWeather2"),
+    document.getElementById("futureWeather3"),
+    document.getElementById("futureWeather4"),
+
 ]
 
 var tempElem = [
@@ -118,6 +129,7 @@ function pushWeather(data) {
 
     for( a=0; a<6; a++) {
         dateElem[a].textContent = date[a].toLocaleDateString();
+        imageElem[a].setAttribute("src", `http://api.openweathermap.org/img/w/${data.list[a].weather[0].icon}.png`)
         tempElem[a].textContent = "Temp: " + temp[a] + " ºF";
         windElem[a].textContent = "Wind: " + wind[a] + " MPH";
         humidElem[a].textContent = "Humidity: " + humid[a] + " %";
